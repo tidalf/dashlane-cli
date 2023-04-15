@@ -17,6 +17,8 @@ jobs:
                       extension: .exe
                     - host: ubuntu-latest
                       target: linux-x64
+                    - host: ubuntu-latest
+                      target: linux-arm64
         runs-on: ${{ matrix.settings.host }}
         name: dev build - ${{ matrix.settings.target }} - node@16
         steps:
@@ -60,5 +62,6 @@ jobs:
               with:
                   files: |
                       artifacts/dcli-linux-x64/dcli-linux-x64
+                      artifacts/dcli-linux-arm64/dcli-linux-arm64
                       artifacts/dcli-macos-x64/dcli-macos-x64
                       artifacts/dcli-win-x64/dcli-win-x64.exe
